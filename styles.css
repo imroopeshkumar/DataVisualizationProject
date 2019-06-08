@@ -19,6 +19,7 @@ polyline{
   width: 960px;
   height: 500px;
   position: relative;
+  float:left; /* add this */
 }
 
 #drawing_area_pie_chart_days {
@@ -26,6 +27,7 @@ polyline{
 	width: 960px;
 	height: 500px;
 	position: relative;
+	overflow: hidden;
   }
 
 path.slice{
@@ -52,4 +54,33 @@ div.tooltip {
     border-radius: 8px;			
     pointer-events: none;			
 }
+
+.rectangle {
+	fill: steelblue;
+}
+.rectangle:hover {
+	fill: orange;
+}
+
+.selectedrect {
+	fill: rebeccapurple
+}
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+#month_pie_chart {
+margin-left: 27%;
+}
+
+#day_pie_chart {
+	margin-left: 26%;
+	}
+
         
