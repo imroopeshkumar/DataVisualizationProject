@@ -19,7 +19,6 @@ polyline{
   width: 960px;
   height: 500px;
   position: relative;
-  float:left; /* add this */
 }
 
 #drawing_area_pie_chart_days {
@@ -27,7 +26,6 @@ polyline{
 	width: 960px;
 	height: 500px;
 	position: relative;
-	overflow: hidden;
   }
 
 path.slice{
@@ -82,5 +80,19 @@ margin-left: 27%;
 #day_pie_chart {
 	margin-left: 26%;
 	}
+
+	path { 
+		stroke: steelblue;
+		stroke-width: 2;
+		fill: none;
+	  }
+	   
+	  .axis path,
+	  .axis line {
+		  fill: none;
+		  stroke: grey;
+		  stroke-width: 1;
+		  shape-rendering: crispEdges;
+	  }
 
         

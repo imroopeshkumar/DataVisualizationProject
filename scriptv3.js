@@ -1,11 +1,7 @@
 console.log('hello')
 
 
-let choropleth_width = 960;
-let choropleth_height = 500;
 
-let choropleth_lowColor = '#f9f9f9'
-let choropleth_highColor = '#bc2a66'
 
 let margin = { top: 50, right: 50, bottom: 50, left: 50 }
     , width = window.innerWidth - margin.left - margin.right // Use the window's width 
@@ -248,7 +244,7 @@ function drawdayspie(year, month) {
         d3.select("#drawing_area_pie_chart_day").selectAll('svg').remove()
         var piesvg = d3.select("#drawing_area_pie_chart_day")
             .append("svg").attr('id', 'daypiesvg')
-            .attr('width', 960).attr('height', 540)
+            .attr('width', 960).attr('height', 280)
             .append("g").attr('id', 'daypie')
 
 
@@ -584,4 +580,79 @@ function buildbarchart(barchartdata) {
             drawdayspie(d.year, 'Jan')
 
         })
+
+
+
+    
 }
+
+
+
+// function buildlinechart() {
+//     var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+// 	width = 600 - margin.left - margin.right,
+//     height = 270 - margin.top - margin.bottom;
+    
+
+// }
+
+d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
+    , function (data) {
+        var	parseDate = d3.time.format("%Y-%m-%d").parse;
+
+        data.forEach(function (d) {
+            d.date = parseDate(d['Date.x']);
+            d.close = +d.n;
+        });
+        var margin = { top: 30, right: 20, bottom: 30, left: 50 },
+            width = 900 - margin.left - margin.right,
+            height = 570 - margin.top - margin.bottom;
+
+        var parseDate = d3.time.format("%Y-%m-%Y").parse;
+        var x = d3.time.scale().range([0, width]);
+        var y = d3.scale.linear().range([height, 0]);
+        var xAxis = d3.svg.axis().scale(x)
+            .orient("bottom").ticks(5);
+        var yAxis = d3.svg.axis().scale(y)
+            .orient("left").ticks(5);
+        var valueline = d3.svg.line()
+            .x(function (d) { return x(d.date); })
+            .y(function (d) { return y(d.n); });
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	x.domain(d3.extent(data, function(d) { return d.date; }));
+	y.domain([0, d3.max(data, function(d) { return d.close; })]);
+ 
+	// Add the valueline path.
+	svg.append("path")	
+		.attr("class", "line")
+		.attr("d", valueline(data));
+ 
+	// Add the X Axis
+	svg.append("g")		
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis);
+ 
+	// Add the Y Axis
+	svg.append("g")		
+		.attr("class", "y axis")
+        .call(yAxis);
+        
+    d3.select('path.line').on('mouseover', (d)=> {
+        div.transition()
+            .duration(200)
+            .style("opacity", .9);
+
+        div.html(d.close)
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+    })
+
+
+    })
