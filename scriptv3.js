@@ -180,6 +180,7 @@ d3.csv("http://118.138.62.59:9000/dataloc/freqdaymonthyear.csv"
 
 
 function drawdayspie(year, month) {
+    selectedyear = year;
     selecteddata = 'piedata' + month;
 
     piedataJan = []
@@ -605,7 +606,7 @@ d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
             d.close = +d.n;
         });
         var margin = { top: 30, right: 20, bottom: 30, left: 50 },
-            width = 900 - margin.left - margin.right,
+            width = 1800 - margin.left - margin.right,
             height = 570 - margin.top - margin.bottom;
 
         var parseDate = d3.time.format("%Y-%m-%Y").parse;
@@ -644,15 +645,15 @@ d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
 		.attr("class", "y axis")
         .call(yAxis);
         
-    d3.select('path.line').on('mouseover', (d)=> {
-        div.transition()
-            .duration(200)
-            .style("opacity", .9);
+    // d3.select('path.line').on('mouseover', (d)=> {
+    //     div.transition()
+    //         .duration(200)
+    //         .style("opacity", .9);
 
-        div.html(d.close)
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
-    })
+    //     div.html(d.close)
+    //         .style("left", (d3.event.pageX) + "px")
+    //         .style("top", (d3.event.pageY - 28) + "px");
+    // })
 
 
     })
