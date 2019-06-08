@@ -2,15 +2,49 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles.scss">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-    <script src="d3.js"></script>
-    <script src='script.js' defer></script>
+    <!-- <script src="d3.js"></script> -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <!-- <script src='script.js' defer></script> -->
+    <script src='scriptv3.js' defer></script>
+
     <div id="drawing_area_choropleth"></div>
     <div id="drawing_area_bubble"></div>
+    <input type="button" id="piechartbutton2014" value="2014"/>
+    <input type="button" id="piechartbutton2015" value="2015"/>
+
+    <input type="button" id="piechartbutton2016" value="2016"/>
+    <div id="drawing_area_pie_chart_month"></div>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <option class="dropdown-item" selected='selected'>Jan</option></br>
+        <a class="dropdown-item" id="Feb" >Feb</a></br>
+        <a class="dropdown-item" >Mar</a></br>
+        <a class="dropdown-item" >Apr</a></br>
+        <a class="dropdown-item" >May</a></br>
+        <a class="dropdown-item" >Jun</a></br>
+        <a class="dropdown-item" >Jul</a></br>
+        <a class="dropdown-item" >Aug</a></br>
+        <a class="dropdown-item" >Sep</a></br>
+        <a class="dropdown-item" >Oct</a></br>
+        <a class="dropdown-item" >Nov</a></br>
+        <a class="dropdown-item" >Dec</a></br>
+    </div>
+</div>
+
+
 
 
 
