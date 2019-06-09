@@ -82,7 +82,7 @@ margin-left: 27%;
 	}
 
 	path { 
-		stroke: steelblue;
+		stroke: rgb(24, 117, 153);
 		stroke-width: 2;
 		fill: none;
 	  }
