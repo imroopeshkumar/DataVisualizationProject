@@ -2,10 +2,10 @@
 h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
 body {font-family: "Arial"}
 
-svg {
+/* svg {
 	width: 100%;
 	height: 100%;
-}
+} */
 
 polyline{
 	opacity: .3;
@@ -15,17 +15,22 @@ polyline{
 }
 
 #drawing_area_pie_chart_month {
+	width: 50%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
+  /* width: 960px;
+  height: 500px; */
   position: relative;
+  float:left;
 }
 
-#drawing_area_pie_chart_days {
+#drawing_area_pie_chart_day {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	width: 960px;
-	height: 500px;
+	/* width: 960px;
+	height: 500px; */
 	position: relative;
+		width: 50%;
+
+	float:right;
   }
 
 path.slice{
@@ -74,11 +79,19 @@ div.tooltip {
   shape-rendering: crispEdges;
 }
 #month_pie_chart {
-margin-left: 27%;
+	float:left;
+	/* margin-left: 27%; */
+			  text-align: center;
+
+	width:50%;
 }
 
 #day_pie_chart {
-	margin-left: 26%;
+	width:50%;
+	float:right;
+	/* margin-right: 15%; */
+			  text-align: center
+
 	}
 
 	path { 
@@ -101,4 +114,73 @@ margin-left: 27%;
 		/* width: 5000px;
 		height: 1000px; */
 	  }
+
+	  #title {
+		  text-align: center
+	  }
+
+	  #barchart {
+		  text-align: left
+	  }
         
+
+#drawing_area_bar_chart {
+	height: 40%;
+}
+
+#accident_severity_div {
+		position: relative;
+
+	float: left; width: 35%;
+		height: 40%;
+
+}
+
+#road_condition_div {
+	float: left; width: 30%;
+		height: 40%;
+				position: relative;
+
+
+}
+
+
+#road_type_div {
+	float: right; width: 35%;
+		height: 40%;
+
+}
+
+#multi_varible_pie_chart {
+	width: 100%;
+	height: 50%;
+}
+
+#weather_conditions_div {
+float: left; width: 50%;
+		height: 40%;
+}
+
+#group1 {
+	width: 100%;
+	height: 50%;
+}
+
+
+#group2 {
+	width: 100%;
+	height: 50%;
+}
+
+#spacer1 {
+	width: 100%;
+	height: 20px;
+}
+
+#pie_chart-footers {
+width:100%;
+height: 20%;
+text-align:center;
+}
+
+#

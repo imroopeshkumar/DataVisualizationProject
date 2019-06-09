@@ -1,124 +1,85 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-
-    <header class="w3-display-container w3-wide" id="home">
-        <!-- <img class="w3-image" src="/w3images/jane.jpg" alt="Fashion Blog" width="1600" height="1060"> -->
-        <div class="w3-display-left w3-padding-large">
-            <!-- <h1 class="w3-text-white">Data Visualization Project</h1> -->
-            <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Data Visualization Project</b></h1>
-        </div>
-    </header>
-    <div class="w3-container" id="about">
-        <div class="w3-content" style="max-width:700px">
-        </div>
-        <p><strong>Author:</strong> Roopesh Kumar Ramesh</p>
-        <p><strong>Student Id</strong> 30344565</p>
-    </div>
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Background and Introduction</span></h5>
-
-    <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches,
-        as well as a selection of sides and salads and other good stuff.</p>
-    <div class="w3-panel w3-leftbar w3-light-grey">
-        <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new
-                sweet.</i></p>
-        <p>Chef, Coffeeist and Owner: Liam Brown</p>
-
-    </div>
-
-
-    <!-- <script src="d3.js"></script> -->
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="cloud.js"></script>
-
-    <!-- <script src='script.js' defer></script> -->
-    <script src='scriptv3.js' defer></script>
-
-    <div id="drawing_area_choropleth"></div>
-    <div id="drawing_area_bubble"></div>
-
-
-    <div id="drawing_area_bar_chart"></div>
-
-
-
-
-
-    <div id="bar_chart_label"></div>
-    <h1 id="month_pie_chart_heading">Here is Pie Chart of months of selected year</h1>
-
-
-
-
-
-
-
-    <div id="drawing_area_pie_chart_month"></div>
-    <h1 id="month_pie_chart"></h1>
-    <h1 id="day_pie_chart_heading">Here is Pie Chart of days of selected month</h1>
-
-    <div id="drawing_area_pie_chart_day"></div>
-    <h1 id="day_pie_chart"></h1>
-    </br>
-
-
-
-
-
-
-
-
-
-    <div id="multi_varible_pie_chart">
-
-        <div id="accident_severity"></div>
-        <div id="road_condition"></div>
-        <div id="road_type"></div>
-        <div id="weather_conditions"></div>
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <h1 id="day_pie_chart_heading">Here is Word Cloud</h1>
-
-    <div id="drawing_area_word_cloud"></div>
-    <div id="drawing_area_line_chart"></div>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
+   <head>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <!-- 
+         <header class="w3-display-container w3-wide" id="home">
+             <div class="w3-display-left w3-padding-large">
+                 <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Data Visualization Project</b></h1>
+             </div>
+         </header>
+         <div class="w3-container" id="about">
+             <div class="w3-content" style="max-width:700px">
+             </div>
+             <p><strong>Author:</strong> Roopesh Kumar Ramesh</p>
+             <p><strong>Student Id</strong> 30344565</p>
+         </div>
+         <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Background and Introduction</span></h5>
+         
+         <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+             ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+         <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches,
+             as well as a selection of sides and salads and other good stuff.</p>
+         <div class="w3-panel w3-leftbar w3-light-grey">
+             <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new
+                     sweet.</i></p>
+             <p>Chef, Coffeeist and Owner: Liam Brown</p>
+         
+         </div> -->
+      <!-- <script src="d3.js"></script> -->
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="cloud.js"></script>
+      <!-- <script src='script.js' defer></script> -->
+      <script src='scriptv3.js' defer></script>
+      <div id='title'>
+         <h1>Data Visualization</h1>
+      </div>
+      <div id='intro'>
+         <h4>I have given some Introduction</h4>
+      </div>
+      <div id= "drawing_areas">
+         <!-- <div id="drawing_area_choropleth"></div>
+            <div id="drawing_area_bubble"></div> -->
+         <div id='barchart'>
+            <h2>This is a bar Chart</h2>
+            <div id="drawing_area_bar_chart"></div>
+            <div id="bar_chart_label"></div>
+         </div>
+         <div id='pie_charts'>
+            <h1 id="month_pie_chart_heading">Here is Pie Chart of months of selected year</h1>
+            <div id="drawing_area_pie_chart_month">
+               <h1 id="day_pie_chart_heading">Here is Pie Chart of days of selected month</h1>
+            </div>
+            <div id="drawing_area_pie_chart_day">
+               <h1 id="day_pie_chart_heading">Here is Pie Chart of days of selected month</h1>
+            </div>
+            <div id='pie_chart-footers'><h1 >
+            <div id="month_pie_chart"></div></h1>
+            <h1 ><div id="day_pie_chart"></div></h1>
+            </div>
+         </div>
+         <!-- <div id="accident_severity_div"></div> -->
+         <div id='spacer1'></div>
+         <!-- <div id="multi_varible_pie_chart"> -->
+            <!-- <div id='group1'> -->
+                           <div id="road_type_div"></div>
+
+               <div id="accident_severity_div"></div>
+               <div id="road_condition_div"></div>
+            <!-- </div> -->
+            <!-- <div id='group2'> -->
+               <!-- <div id="weather_conditions_div"></div> -->
+            <!-- </div> -->
+         </div>
+         <!-- <h1 id="day_pie_chart_heading">Here is Word Cloud</h1> -->
+         <div id="drawing_area_word_cloud"></div>
+         <div id="drawing_area_line_chart"></div>
+      </div>
+   </body>
 </html>

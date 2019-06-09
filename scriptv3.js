@@ -56,38 +56,12 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
         freqdata = data;
         // console.log(data)
         let piesvg = d3.select("#drawing_area_pie_chart_month")
-            .append("svg")
+            .append("svg").attr('width', screen.width/2).attr('height', screen.height/2)
             // .attr('width', 1000).attr('height', 1000)
             .append("g")
 
 
 
-        piedata2005 = []
-        piedata2006 = []
-        piedata2007 = []
-        piedata2008 = []
-        piedata2009 = []
-        piedata2010 = []
-        piedata2011 = []
-        piedata2012 = []
-        piedata2013 = []
-        piedata2014 = []
-        piedata2015 = []
-        piedata2016 = []
-        piedata2017 = []
-        let five = 0
-        let six = 0
-        let seven = 0
-        let eight = 0
-        let nine = 0
-        let ten = 0
-        let eleven = 0
-        let twelve = 0
-        let thirteen = 0
-        let fourteen = 0
-        let fifteen = 0
-        let sixteen = 0
-        let seventeen = 0
 
 
 
@@ -265,7 +239,7 @@ function drawdayspie(year, month) {
         d3.select("#drawing_area_pie_chart_day").selectAll('svg').remove()
         let piesvg = d3.select("#drawing_area_pie_chart_day")
             .append("svg").attr('id', 'daypiesvg')
-            .attr('width', 960).attr('height', 280)
+            .attr('width', screen.width/2).attr('height', screen.height/2)
             .append("g").attr('id', 'daypie')
 
 
@@ -387,7 +361,7 @@ function change(piesvg, data) {
             return function (t) {
                 let d2 = interpolate(t);
                 let pos = outerArc.centroid(d2);
-                pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+                pos[0] = radius *.95 * (midAngle(d2) < Math.PI ? 1 : -1);
                 return [arc.centroid(d2), outerArc.centroid(d2), pos];
             };
         });
@@ -513,17 +487,18 @@ function buildbarchart(barchartdata) {
     let data = barchartdata
     let count = 0
 
-    let margin = { top: 80, right: 180, bottom: 80, left: 180 },
+    let margin = { top: 20, right: 20, bottom: 20, left: 60 },
         width = 960 - margin.left - margin.right,
+        // width =
         height = 500 - margin.top - margin.bottom;
     let barsvg = d3.select("#drawing_area_bar_chart").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("width",screen.width)
+        .attr("height", screen.height/2 )
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     let y = d3.scale.linear()
-        .domain([0, 100000])
+        .domain([0, 120000])
         .range([height, 0]);
 
     let x = d3.scale.ordinal()
@@ -788,9 +763,9 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-    let accident_severity_svg = d3.select("#accident_severity")
+    let accident_severity_svg = d3.select("#accident_severity_div")
         .append("svg").attr('id', 'accident_severity')
-        .attr('width', 960).attr('height', 280)
+        .attr('width', screen.width/3).attr('height', screen.height/2)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -805,7 +780,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    accident_severity_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    accident_severity_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
     // console.log(piedatajan)
     change(accident_severity_svg, accident_severity_data);
 
@@ -813,9 +788,9 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-    let road_condition_svg = d3.select("#road_condition")
+    let road_condition_svg = d3.select("#road_condition_div")
         .append("svg").attr('id', 'road_condition')
-        .attr('width', 960).attr('height', 280)
+        .attr('width', screen.width/3).attr('height', screen.height/2)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -830,7 +805,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    road_condition_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    road_condition_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
     // console.log(piedatajan)
     change(road_condition_svg, road_surface_conditions_data);
 
@@ -841,9 +816,9 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-    let road_type_svg = d3.select("#road_type")
-        .append("svg").attr('id', 'road_condition')
-        .attr('width', 960).attr('height', 280)
+    let road_type_svg = d3.select("#road_type_div")
+        .append("svg").attr('id', 'road_type')
+        .attr('width', screen.width/3).attr('height', screen.height/2)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -858,7 +833,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    road_type_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    road_type_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
     // console.log(piedatajan)
     change(road_type_svg, road_type_data);
 
@@ -871,7 +846,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-    // let weather_conditions_svg = d3.select("#weather_conditions")
+    // let weather_conditions_svg = d3.select("#weather_conditions_div")
     //     .append("svg").attr('id', 'road_condition')
     //     .attr('width', 960).attr('height', 280)
     //     .append("g")
@@ -897,3 +872,8 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 });
+
+
+
+//---------------------------------------------correlation matrix
+
