@@ -95,4 +95,10 @@ margin-left: 27%;
 		  shape-rendering: crispEdges;
 	  }
 
+	  #drawing_area_line_chart{
+		/* overflow-x: scroll; */
+		width: 100%;
+		/* width: 5000px;
+		height: 1000px; */
+	  }
         
