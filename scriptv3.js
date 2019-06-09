@@ -47,328 +47,6 @@ let color = d3.scale.ordinal()
     .domain(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00", '#dd44a3', '#7c0621', '#d8cf4b', '#e01818', '#62c44a']);
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-// d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
-//     , function (data) {
-//         freqdata = data;
-//         // console.log(data)
-//         let piesvg = d3.select("#drawing_area_pie_chart_month")
-//             .append("svg")
-//             // .attr('width', 1000).attr('height', 1000)
-//             .append("g")
-
-        
-
-//         piedata2005 = []
-//         piedata2006 = []
-//         piedata2007 = []
-//         piedata2008 = []
-//         piedata2009 = []
-//         piedata2010 = []
-//         piedata2011 = []
-//         piedata2012 = []
-//         piedata2013 = []
-//         piedata2014 = []
-//         piedata2015 = []
-//         piedata2016 = []
-//         piedata2017 = []
-//         let five = 0
-//         let six = 0
-//         let seven = 0
-//         let eight = 0
-//         let nine = 0
-//         let ten = 0
-//         let eleven = 0
-//         let twelve = 0
-//         let thirteen = 0
-//         let fourteen = 0
-//         let fifteen = 0
-//         let sixteen = 0
-//         let seventeen = 0
-
-
-//         data.forEach(element => {
-
-
-//             // let years = []
-//             // let months = []
-//             // let days = [];
-//             // if()
-
-
-
-//             if (element.year == 2014) {
-//                 fourteen += parseInt(element.n)
-//                 count = 0
-
-
-//                 let found = piedata2014.some(item => item.label == element.month);
-//                 if (found) {
-//                     // console.log(found)
-//                     piedata2014.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2014.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-//                 count += 1
-
-//             }
-
-//             else if (element.year == 2005) {
-
-//                 five += parseInt(element.n)
-//                 let found = piedata2005.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2005.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2005.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             }
-//             else if (element.year == 2006) {
-
-//                 six += parseInt(element.n)
-//                 let found = piedata2006.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2006.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2006.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             } else if (element.year == 2007) {
-
-//                 seven += parseInt(element.n)
-//                 let found = piedata2007.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2007.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2007.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             }
-//             else if (element.year == 2008) {
-
-//                 eight += parseInt(element.n)
-//                 let found = piedata2008.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2008.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2008.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             } else if (element.year == 2009) {
-
-//                 nine += parseInt(element.n)
-//                 let found = piedata2009.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2009.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2009.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             } else if (element.year == 2010) {
-
-//                 ten += parseInt(element.n)
-//                 let found = piedata2010.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2010.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2010.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             }
-//             else if (element.year == 2011) {
-
-//                 eleven += parseInt(element.n)
-//                 let found = piedata2011.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2011.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2011.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             } else if (element.year == 2012) {
-
-//                 twelve += parseInt(element.n)
-//                 let found = piedata2012.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2012.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2012.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             } else if (element.year == 2013) {
-
-//                 thirteen += parseInt(element.n)
-//                 let found = piedata2013.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2013.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2013.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             }
-//             else if (element.year == 2015) {
-
-//                 fifteen += parseInt(element.n)
-//                 let found = piedata2015.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2015.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2015.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-
-//             }
-//             else if (element.year == 2016) {
-//                 sixteen += parseInt(element.n)
-//                 let found = piedata2016.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2016.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2016.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-//             }
-//             else if (element.year == 2017) {
-//                 seventeen += parseInt(element.n)
-//                 let found = piedata2017.some(item => item.label == element.month);
-//                 if (found) {
-//                     piedata2016.forEach(e => {
-//                         if (e.label == element.month) {
-//                             e.value += parseInt(element.n)
-//                         }
-//                     })
-//                 }
-
-//                 else {
-//                     piedata2017.push({ 'label': element.month, 'value': parseInt(element.n) })
-//                 }
-//             }
-
-
-//         });
-//         // barchartdata = { 't2014': four, 't2015': five, 't2016': six, 't2017': seven }
-//         barchartdata = []
-//         barchartdata.push({ 'year': 2005, 'value': five })
-//         barchartdata.push({ 'year': 2006, 'value': six })
-//         barchartdata.push({ 'year': 2007, 'value': seven })
-//         barchartdata.push({ 'year': 2008, 'value': eight })
-//         barchartdata.push({ 'year': 2009, 'value': nine })
-//         barchartdata.push({ 'year': 2010, 'value': ten })
-//         barchartdata.push({ 'year': 2011, 'value': eleven })
-//         barchartdata.push({ 'year': 2013, 'value': thirteen })
-//         barchartdata.push({ 'year': 2012, 'value': twelve })
-
-//         barchartdata.push({ 'year': 2014, 'value': fourteen })
-//         barchartdata.push({ 'year': 2015, 'value': fifteen })
-
-//         barchartdata.push({ 'year': 2016, 'value': sixteen })
-//         barchartdata.push({ 'year': 2017, 'value': seventeen })
-
-//         // console.log(barchartdata)
-
-//         buildbarchart(barchartdata)
-
-//         piesvg.append("g")
-//             .attr("class", "slices");
-//         piesvg.append("g")
-//             .attr("class", "labels");
-//         piesvg.append("g")
-//             .attr("class", "lines");
-
-
-//         piesvg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
-//         monthpiesvg = piesvg
-//         d3.select('#month_pie_chart').html('2005')
-
-//         change(piesvg, piedata2005);
-//         selectedyear = 2005;
-
-//         drawdayspie(selectedyear, 'Jan')
-
-
-
-
-
-//     })
-
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//#####################################################################################################################################################################
 let years = []
 let yearsdata = [];
 
@@ -382,7 +60,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
             // .attr('width', 1000).attr('height', 1000)
             .append("g")
 
-        
+
 
         piedata2005 = []
         piedata2006 = []
@@ -412,7 +90,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
         let seventeen = 0
 
 
-   
+
 
         data.forEach(element => {
 
@@ -426,44 +104,43 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
             let monthsdata = []
 
 
-            if(years.includes(element.year)) {
-                yearsdata.forEach(x=> {
-                    if(x.year == element.year) {
-                        if(x.months.includes(element.month)) {
-                            x.monthdata.forEach(y=> {
-                                if(y.label == element.month)
-                                {
-                                    y.value+= parseInt(element.n)
+            if (years.includes(element.year)) {
+                yearsdata.forEach(x => {
+                    if (x.year == element.year) {
+                        if (x.months.includes(element.month)) {
+                            x.monthdata.forEach(y => {
+                                if (y.label == element.month) {
+                                    y.value += parseInt(element.n)
                                 }
                             })
                         }
                         else {
                             x.months.push(element.month)
-                            x.monthdata.push({'label': element.month, 'value':parseInt(element.n)})
+                            x.monthdata.push({ 'label': element.month, 'value': parseInt(element.n) })
                         }
                     }
                 })
-             
+
             }
             else {
                 years.push(element.year)
-                yearsdata.push({'year':element.year,'months': [],  'monthdata': []})
-                yearsdata.forEach(d=> {
-                    if(d.year == element.year) {
-                        if(d.months.includes(element.month)){
-                            d.monthdata.forEach(a=> {
-                                if(a.label == element.month) {
+                yearsdata.push({ 'year': element.year, 'months': [], 'monthdata': [] })
+                yearsdata.forEach(d => {
+                    if (d.year == element.year) {
+                        if (d.months.includes(element.month)) {
+                            d.monthdata.forEach(a => {
+                                if (a.label == element.month) {
                                     a.value += parseInt(element.n)
                                 }
                             })
                         }
                         else {
                             d.months.push(element.month)
-                            
-                                d.monthdata.push({
-                                    'label': element.month, 'value': parseInt(element.n)
-                                })
-                            
+
+                            d.monthdata.push({
+                                'label': element.month, 'value': parseInt(element.n)
+                            })
+
                         }
                     }
                 })
@@ -471,224 +148,6 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
 
 
 
-
-            // if (element.year == 2014) {
-            //     fourteen += parseInt(element.n)
-            //     count = 0
-
-
-            //     let found = piedata2014.some(item => item.label == element.month);
-            //     if (found) {
-            //         // console.log(found)
-            //         piedata2014.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2014.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-            //     count += 1
-
-            // }
-
-            // else if (element.year == 2005) {
-
-            //     five += parseInt(element.n)
-            //     let found = piedata2005.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2005.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2005.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // }
-            // else if (element.year == 2006) {
-
-            //     six += parseInt(element.n)
-            //     let found = piedata2006.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2006.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2006.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // } else if (element.year == 2007) {
-
-            //     seven += parseInt(element.n)
-            //     let found = piedata2007.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2007.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2007.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // }
-            // else if (element.year == 2008) {
-
-            //     eight += parseInt(element.n)
-            //     let found = piedata2008.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2008.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2008.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // } else if (element.year == 2009) {
-
-            //     nine += parseInt(element.n)
-            //     let found = piedata2009.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2009.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2009.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // } else if (element.year == 2010) {
-
-            //     ten += parseInt(element.n)
-            //     let found = piedata2010.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2010.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2010.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // }
-            // else if (element.year == 2011) {
-
-            //     eleven += parseInt(element.n)
-            //     let found = piedata2011.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2011.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2011.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // } else if (element.year == 2012) {
-
-            //     twelve += parseInt(element.n)
-            //     let found = piedata2012.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2012.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2012.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // } else if (element.year == 2013) {
-
-            //     thirteen += parseInt(element.n)
-            //     let found = piedata2013.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2013.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2013.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // }
-            // else if (element.year == 2015) {
-
-            //     fifteen += parseInt(element.n)
-            //     let found = piedata2015.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2015.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2015.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-
-            // }
-            // else if (element.year == 2016) {
-            //     sixteen += parseInt(element.n)
-            //     let found = piedata2016.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2016.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2016.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-            // }
-            // else if (element.year == 2017) {
-            //     seventeen += parseInt(element.n)
-            //     let found = piedata2017.some(item => item.label == element.month);
-            //     if (found) {
-            //         piedata2016.forEach(e => {
-            //             if (e.label == element.month) {
-            //                 e.value += parseInt(element.n)
-            //             }
-            //         })
-            //     }
-
-            //     else {
-            //         piedata2017.push({ 'label': element.month, 'value': parseInt(element.n) })
-            //     }
-            // }
 
 
         });
@@ -698,28 +157,13 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
         // barchartdata = { 't2014': four, 't2015': five, 't2016': six, 't2017': seven }
         barchartdata = []
 
-        yearsdata.forEach(t=> {
+        yearsdata.forEach(t => {
             count = 0;
-            t.monthdata.forEach(x=> {
-                count+= parseInt(x.value)
+            t.monthdata.forEach(x => {
+                count += parseInt(x.value)
             })
             barchartdata.push({ 'year': t.year, 'value': count })
         })
-        // barchartdata.push({ 'year': 2005, 'value': five })
-        // barchartdata.push({ 'year': 2006, 'value': six })
-        // barchartdata.push({ 'year': 2007, 'value': seven })
-        // barchartdata.push({ 'year': 2008, 'value': eight })
-        // barchartdata.push({ 'year': 2009, 'value': nine })
-        // barchartdata.push({ 'year': 2010, 'value': ten })
-        // barchartdata.push({ 'year': 2011, 'value': eleven })
-        // barchartdata.push({ 'year': 2013, 'value': thirteen })
-        // barchartdata.push({ 'year': 2012, 'value': twelve })
-
-        // barchartdata.push({ 'year': 2014, 'value': fourteen })
-        // barchartdata.push({ 'year': 2015, 'value': fifteen })
-
-        // barchartdata.push({ 'year': 2016, 'value': sixteen })
-        // barchartdata.push({ 'year': 2017, 'value': seventeen })
 
         console.log(barchartdata)
 
@@ -736,8 +180,8 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
         piesvg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
         monthpiesvg = piesvg
         d3.select('#month_pie_chart').html('2005')
-        yearsdata.forEach(t=> {
-            if(t.year == 2005) {
+        yearsdata.forEach(t => {
+            if (t.year == 2005) {
                 change(piesvg, t.monthdata);
             }
         })
@@ -895,7 +339,7 @@ function change(piesvg, data) {
         .append("text")
         .attr("dy", ".35em")
         .text(function (d) {
-            return d.data.label;
+            return d.data.label + ':' + d.data.value;
         });
 
     function midAngle(d) {
@@ -1152,8 +596,8 @@ function buildbarchart(barchartdata) {
             d3.select('#drawing_area_bar_chart').selectAll('rect').attr('class', 'rectangle')
             d3.select('#y' + d.year).attr('class', 'selectedrect')
             d3.select('#month_pie_chart').html(d.year)
-            yearsdata.forEach(x=> {
-                if(x.year == d.year) {
+            yearsdata.forEach(x => {
+                if (x.year == d.year) {
                     change(monthpiesvg, x.monthdata);
 
                 }
@@ -1231,32 +675,225 @@ d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
 
     })
 
-    d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function(data) {
-            // console.log(data)
+d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (data) {
+    // console.log(data)
 
-            let accident_severity_attributes = [];
-            let accident_severity_data = [];
-            let road_surface_conditions = [];
-            let road_type = []
-            let weather_conditions = [];
-
-            data.forEach(record => {
-                if(accident_severity_attributes.includes(record.Accident_Severity)) {
-                    // console.log(exists)
-                    accident_severity_data.forEach(x=> {
-                        if(x.label == record.Accident_Severity) {
-                            x.value += parseInt(record.n)
-                        }
-                    })
+    let accident_severity_attributes = [];
+    let accident_severity_data = [];
+    let road_surface_conditions_attributes = [];
+    let road_surface_conditions_data = []
+    let road_type_attributes = []
+    let road_type_data = []
+    let weather_conditions_attributes = [];
+    let weather_conditions_data = [];
 
 
-                } else {
-                    accident_severity_attributes.push(record.Accident_Severity)
-                    accident_severity_data.push({
-                        'label': record.Accident_Severity, 'value': parseInt(record.n)
-                    })
+    data.forEach(record => {
+        if (accident_severity_attributes.includes(record.Accident_Severity)) {
+            // console.log(exists)
+            accident_severity_data.forEach(x => {
+                if (x.label == record.Accident_Severity) {
+                    x.value += parseInt(record.n)
                 }
             })
 
 
-    });
+        } else if (!accident_severity_attributes.includes(record.Accident_Severity)) {
+            accident_severity_attributes.push(record.Accident_Severity)
+            accident_severity_data.push({
+                'label': record.Accident_Severity, 'value': parseInt(record.n)
+            })
+        }
+
+        if (road_surface_conditions_attributes.includes(record.Road_Surface_Conditions)) {
+            // console.log(exists)
+            road_surface_conditions_data.forEach(x => {
+                if (x.label == record.Road_Surface_Conditions) {
+                    x.value += parseInt(record.n)
+                }
+            })
+
+
+        } else if (!road_surface_conditions_attributes.includes(record.Road_Surface_Conditions)) {
+            if (!(record.Road_Surface_Conditions == 'Data missing or out of range')) {
+                road_surface_conditions_attributes.push(record.Road_Surface_Conditions)
+
+                road_surface_conditions_data.push({
+                    'label': record.Road_Surface_Conditions, 'value': parseInt(record.n)
+                })
+
+            }
+
+        }
+
+
+
+        if (road_type_attributes.includes(record.Road_Type)) {
+            // console.log(exists)
+            road_type_data.forEach(x => {
+                if (x.label == record.Road_Type) {
+                    x.value += parseInt(record.n)
+                }
+            })
+
+
+        } else if (!road_type_attributes.includes(record.Road_Type)) {
+            if (!(record.road_type_attributes == 'Data missing or out of range')) {
+                road_type_attributes.push(record.Road_Type)
+
+                road_type_data.push({
+                    'label': record.Road_Type, 'value': parseInt(record.n)
+                })
+
+            }
+
+        }
+
+
+
+
+        if (weather_conditions_attributes.includes(record.Weather_Conditions)) {
+            // console.log(exists)
+            weather_conditions_data.forEach(x => {
+                if (x.label == record.Weather_Conditions) {
+                    x.value += parseInt(record.n)
+                }
+            })
+
+
+        } else if (!weather_conditions_attributes.includes(record.Weather_Conditions)) {
+            if (!(record.weather_conditions_attributes == 'Unknown')) {
+                weather_conditions_attributes.push(record.Weather_Conditions)
+
+                weather_conditions_data.push({
+                    'label': record.Weather_Conditions, 'value': parseInt(record.n)
+                })
+
+            }
+
+        }
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+    let accident_severity_svg = d3.select("#accident_severity")
+        .append("svg").attr('id', 'accident_severity')
+        .attr('width', 960).attr('height', 280)
+        .append("g")
+    // .attr('id', 'daypie')
+
+
+
+
+    accident_severity_svg.append("g")
+        .attr("class", "slices");
+    accident_severity_svg.append("g")
+        .attr("class", "labels");
+    accident_severity_svg.append("g")
+        .attr("class", "lines");
+
+
+    accident_severity_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    // console.log(piedatajan)
+    change(accident_severity_svg, accident_severity_data);
+
+
+
+
+
+    let road_condition_svg = d3.select("#road_condition")
+        .append("svg").attr('id', 'road_condition')
+        .attr('width', 960).attr('height', 280)
+        .append("g")
+    // .attr('id', 'daypie')
+
+
+
+
+    road_condition_svg.append("g")
+        .attr("class", "slices");
+    road_condition_svg.append("g")
+        .attr("class", "labels");
+    road_condition_svg.append("g")
+        .attr("class", "lines");
+
+
+    road_condition_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    // console.log(piedatajan)
+    change(road_condition_svg, road_surface_conditions_data);
+
+
+
+
+
+
+
+
+    let road_type_svg = d3.select("#road_type")
+        .append("svg").attr('id', 'road_condition')
+        .attr('width', 960).attr('height', 280)
+        .append("g")
+    // .attr('id', 'daypie')
+
+
+
+
+    road_type_svg.append("g")
+        .attr("class", "slices");
+    road_type_svg.append("g")
+        .attr("class", "labels");
+    road_type_svg.append("g")
+        .attr("class", "lines");
+
+
+    road_type_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    // console.log(piedatajan)
+    change(road_type_svg, road_type_data);
+
+
+
+
+
+
+
+
+
+
+    // let weather_conditions_svg = d3.select("#weather_conditions")
+    //     .append("svg").attr('id', 'road_condition')
+    //     .attr('width', 960).attr('height', 280)
+    //     .append("g")
+    // // .attr('id', 'daypie')
+
+
+
+
+    // weather_conditions_svg.append("g")
+    //     .attr("class", "slices");
+    //     weather_conditions_svg.append("g")
+    //     .attr("class", "labels");
+    //     weather_conditions_svg.append("g")
+    //     .attr("class", "lines");
+
+
+    //     weather_conditions_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+    // // console.log(piedatajan)
+    // change(weather_conditions_svg, weather_conditions_data);
+
+
+    // daypiesvg = piesvg
+
+
+});
