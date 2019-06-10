@@ -377,7 +377,7 @@ function change(piesvg, data) {
             .duration(200)
             .style("opacity", .9);
 
-        div.html(d.data.value)
+        div.html(d.data.label + '\n'+ d.data.value)
             .style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
 
@@ -436,7 +436,7 @@ d3.csv("http://118.138.62.59:9000/dataloc/frequencyofmake.csv"
             ])
             .range([10, 100]);
 
-        d3.layout.cloud().size([width, height])
+        d3.layout.cloud().size([screen.width, screen.height/2])
             .timeInterval(20)
             .words(word_entries)
             .fontSize(function (d) { return xScale(+d.value); })
@@ -448,8 +448,8 @@ d3.csv("http://118.138.62.59:9000/dataloc/frequencyofmake.csv"
 
         function draw(words) {
             d3.select(svg_location).append("svg")
-                .attr("width", width)
-                .attr("height", height)
+                .attr("width", screen.width)
+                .attr("height", screen.height/1.2)
                 .append("g").attr('id', 'wordcloudsvg')
                 .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
                 .selectAll("text")
@@ -837,6 +837,8 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
     // console.log(piedatajan)
     change(road_type_svg, road_type_data);
 
+    d3.select('#road_type_div').selectAll('.lines').remove()
+        d3.select('#road_type_div').selectAll('.labels').remove()
 
 
 
@@ -846,29 +848,33 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-    // let weather_conditions_svg = d3.select("#weather_conditions_div")
-    //     .append("svg").attr('id', 'road_condition')
-    //     .attr('width', 960).attr('height', 280)
-    //     .append("g")
-    // // .attr('id', 'daypie')
+
+
+    let weather_conditions_svg = d3.select("#weather_conditions_div")
+        .append("svg").attr('id', 'weather_condition')
+        .attr('width', screen.width/2).attr('height', screen.height/2)
+        .append("g")
+    // .attr('id', 'daypie')
 
 
 
 
-    // weather_conditions_svg.append("g")
-    //     .attr("class", "slices");
-    //     weather_conditions_svg.append("g")
-    //     .attr("class", "labels");
-    //     weather_conditions_svg.append("g")
-    //     .attr("class", "lines");
+    weather_conditions_svg.append("g")
+        .attr("class", "slices");
+        weather_conditions_svg.append("g")
+        .attr("class", "labels");
+        weather_conditions_svg.append("g")
+        .attr("class", "lines");
 
 
-    //     weather_conditions_svg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
-    // // console.log(piedatajan)
-    // change(weather_conditions_svg, weather_conditions_data);
+        weather_conditions_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
+    // console.log(piedatajan)
+    change(weather_conditions_svg, weather_conditions_data);
+    
+    d3.select('#weather_conditions_div').selectAll('.lines').remove()
+        d3.select('#weather_conditions_div').selectAll('.labels').remove()
 
 
-    // daypiesvg = piesvg
 
 
 });

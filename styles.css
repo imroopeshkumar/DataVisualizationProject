@@ -48,11 +48,12 @@ polyline{
 div.tooltip {	
     position: absolute;			
     text-align: center;			
-    width: 60px;					
-    height: 28px;					
+    width: 80px;					
+    height: 30px;					
     padding: 2px;				
     font: 12px sans-serif;		
-    background: lightsteelblue;	
+    background: lightsteelblue;
+	font-family:sans-serif;	
     border: 0px;		
     border-radius: 8px;			
     pointer-events: none;			
@@ -93,6 +94,32 @@ div.tooltip {
 			  text-align: center
 
 	}
+	#accident_severity_heading_pie_chart {
+width:50%;
+	float:left;
+	/* margin-right: 15%; */
+			  text-align: center;
+
+	}
+#road_type_heading_pie_chart {
+	width:50%;
+	float:left;
+	/* margin-right: 15%; */
+			  text-align: center;
+}
+
+#word_cloud_chart_heading {
+	width: 100%;
+	text-align:center;
+	height: 20px;
+}
+
+.heading {
+		width:50%;
+	float:left;
+	/* margin-right: 15%; */
+			  text-align: center;
+}
 
 	path { 
 		stroke: rgb(24, 117, 153);
@@ -131,35 +158,38 @@ div.tooltip {
 #accident_severity_div {
 		position: relative;
 
-	float: left; width: 35%;
+	float: left; width: 50%;
+		height: 40%;
+
+}
+#road_type_div {
+	float: right; width: 50%;
 		height: 40%;
 
 }
 
 #road_condition_div {
-	float: left; width: 30%;
+	float: left; width: 50%;
 		height: 40%;
 				position: relative;
 
 
 }
-
-
-#road_type_div {
-	float: right; width: 35%;
+#weather_conditions_div {
+float: right; width: 50%;
 		height: 40%;
-
+		/* position:relative */
 }
+
+
+
 
 #multi_varible_pie_chart {
 	width: 100%;
 	height: 50%;
 }
 
-#weather_conditions_div {
-float: left; width: 50%;
-		height: 40%;
-}
+
 
 #group1 {
 	width: 100%;
@@ -183,4 +213,16 @@ height: 20%;
 text-align:center;
 }
 
-#
+#forwordcloud {
+	margin-top:10px;
+	
+}
+
+#wordc {
+	margin-top:10px;
+	text-align:centre;
+}
+
+#day_pie_chart_heading {
+	text-align:center;
+}
