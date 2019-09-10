@@ -136,7 +136,7 @@ width:50%;
 	  }
 
 	  #drawing_area_line_chart{
-		/* overflow-x: scroll; */
+		overflow-x: scroll;
 		width: 100%;
 		/* width: 5000px;
 		height: 1000px; */

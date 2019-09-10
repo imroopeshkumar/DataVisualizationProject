@@ -51,20 +51,15 @@ let years = []
 let yearsdata = [];
 
 
-d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
+// d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
+d3.csv("data/freq_of_date_accident_data.csv"
     , function (data) {
         freqdata = data;
         // console.log(data)
         let piesvg = d3.select("#drawing_area_pie_chart_month")
-            .append("svg").attr('width', screen.width/2).attr('height', screen.height/2)
+            .append("svg").attr('width', screen.width/2).attr('height', screen.height > 900? screen.height/2: screen.height/1.5)
             // .attr('width', 1000).attr('height', 1000)
             .append("g")
-
-
-
-
-
-
 
         data.forEach(element => {
 
@@ -119,11 +114,6 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
                     }
                 })
             }
-
-
-
-
-
         });
 
         console.log(yearsdata)
@@ -151,7 +141,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
             .attr("class", "lines");
 
 
-        piesvg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+        piesvg.attr("transform", "translate(" + screen.width / 4 + "," + screen.height / 2.5 + ")");
         monthpiesvg = piesvg
         d3.select('#month_pie_chart').html('2005')
         yearsdata.forEach(t => {
@@ -162,17 +152,12 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/freq_of_date_accident_data.csv"
         selectedyear = 2005;
 
         drawdayspie(selectedyear, 'Jan')
-
-
-
-
-
     })
 
 
 //#####################################################################################################################################################################
 
-
+//---------------draww days pie chart---------------------------------------
 function drawdayspie(year, month) {
     selectedyear = year;
     selecteddata = 'piedata' + month;
@@ -239,7 +224,7 @@ function drawdayspie(year, month) {
         d3.select("#drawing_area_pie_chart_day").selectAll('svg').remove()
         let piesvg = d3.select("#drawing_area_pie_chart_day")
             .append("svg").attr('id', 'daypiesvg')
-            .attr('width', screen.width/2).attr('height', screen.height/2)
+            .attr('width', screen.width/2).attr('height',  screen.height > 900? screen.height/2: screen.height/1.5)
             .append("g").attr('id', 'daypie')
 
 
@@ -253,7 +238,7 @@ function drawdayspie(year, month) {
             .attr("class", "lines");
 
 
-        piesvg.attr("transform", "translate(" + width / 3 + "," + height / 4 + ")");
+        piesvg.attr("transform", "translate(" + screen.width / 4 + "," + screen.height / 2.7 + ")");
         // console.log(piedatajan)
         change(piesvg, this[selecteddata]);
 
@@ -270,7 +255,7 @@ function drawdayspie(year, month) {
 
 
 
-//----------------methods for piechart--------------------
+//----------------update methods for piechart--------------------
 function change(piesvg, data) {
 
     /* ------- PIE SLICES -------*/
@@ -405,7 +390,8 @@ function change(piesvg, data) {
         })
 };
 
-d3.csv("http://118.138.62.59:9000/dataloc/frequencyofmake.csv"
+//----------------------------wordcloud------------------------------------
+d3.csv("data/frequencyofmake.csv"
     , function (data) {
         // console.log(data)
 
@@ -451,7 +437,7 @@ d3.csv("http://118.138.62.59:9000/dataloc/frequencyofmake.csv"
                 .attr("width", screen.width)
                 .attr("height", screen.height/1.2)
                 .append("g").attr('id', 'wordcloudsvg')
-                .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
+                .attr("transform", "translate(" + [screen.width >> 1, screen.height >> 1] + ")")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
@@ -493,7 +479,7 @@ function buildbarchart(barchartdata) {
         height = 500 - margin.top - margin.bottom;
     let barsvg = d3.select("#drawing_area_bar_chart").append("svg")
         .attr("width",screen.width)
-        .attr("height", screen.height/2 )
+        .attr("height", screen.height> 900 ?screen.height/2 :screen.height/1.25 )
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -598,7 +584,8 @@ function buildbarchart(barchartdata) {
 
 //---------------line graph-----------------
 
-d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
+
+d3.csv("data/freqdate.csv"
     , function (data) {
         let parseDate = d3.time.format("%Y-%m-%d").parse;
 
@@ -650,7 +637,7 @@ d3.csv("http://118.138.62.59:9000/dataloc/freqdate.csv"
 
     })
 
-d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (data) {
+d3.csv("data/multi_variables.csv", function (data) {
     // console.log(data)
 
     let accident_severity_attributes = [];
@@ -760,12 +747,12 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
 
 
-
+//------------------multi pie charts-----------------------------------------------
 
 
     let accident_severity_svg = d3.select("#accident_severity_div")
         .append("svg").attr('id', 'accident_severity')
-        .attr('width', screen.width/3).attr('height', screen.height/2)
+        .attr('width', screen.width/2).attr('height',  screen.height > 900? screen.height/2: screen.height/1.5)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -780,7 +767,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    accident_severity_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
+    accident_severity_svg.attr("transform", "translate(" + screen.width / 4 + "," + screen.height / 2.7 + ")");
     // console.log(piedatajan)
     change(accident_severity_svg, accident_severity_data);
 
@@ -790,7 +777,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
     let road_condition_svg = d3.select("#road_condition_div")
         .append("svg").attr('id', 'road_condition')
-        .attr('width', screen.width/3).attr('height', screen.height/2)
+        .attr('width', screen.width/2).attr('height',  screen.height > 900? screen.height/2: screen.height/1.5)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -805,7 +792,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    road_condition_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
+    road_condition_svg.attr("transform", "translate(" + screen.width / 4+ "," +  screen.height /2.7+ ")");
     // console.log(piedatajan)
     change(road_condition_svg, road_surface_conditions_data);
 
@@ -818,7 +805,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
     let road_type_svg = d3.select("#road_type_div")
         .append("svg").attr('id', 'road_type')
-        .attr('width', screen.width/3).attr('height', screen.height/2)
+        .attr('width', screen.width/2).attr('height',  screen.height > 900? screen.height/2: screen.height/1.5)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -833,7 +820,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-    road_type_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
+    road_type_svg.attr("transform", "translate(" + screen.width / 4 + "," + screen.height / 2.7 + ")");
     // console.log(piedatajan)
     change(road_type_svg, road_type_data);
 
@@ -852,7 +839,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 
     let weather_conditions_svg = d3.select("#weather_conditions_div")
         .append("svg").attr('id', 'weather_condition')
-        .attr('width', screen.width/2).attr('height', screen.height/2)
+        .attr('width', screen.width/2).attr('height',  screen.height > 900? screen.height/2: screen.height/1.5)
         .append("g")
     // .attr('id', 'daypie')
 
@@ -867,7 +854,7 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
         .attr("class", "lines");
 
 
-        weather_conditions_svg.attr("transform", "translate(" + width / 1.5 + "," + height / 4 + ")");
+        weather_conditions_svg.attr("transform", "translate(" + screen.width / 4 + "," + screen.height / 2.7 + ")");
     // console.log(piedatajan)
     change(weather_conditions_svg, weather_conditions_data);
     
@@ -880,6 +867,4 @@ d3.csv("http://118.138.62.59:9000/allyearsdata/multi_variables.csv", function (d
 });
 
 
-
-//---------------------------------------------correlation matrix
 
